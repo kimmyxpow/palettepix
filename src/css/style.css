@@ -3,3 +3,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+[data-warna="input"],
+[data-warna="input"]+button,
+[for="upload"] {
+   background-color: #3700D4;
+   color: #CCBAFF
+}
+
+[data-warna="palet-hex"],
+[data-warna="dominan-hex"] {
+   color: #555555;
+}
+
+[data-warna="palet"],
+[data-warna="dominan"] {
+   min-width: 48px;
+   max-width: 48px;
+   min-height: 48px;
+   max-height: 48px;
+}
