@@ -14,12 +14,12 @@
    <div class="py-8 overflow-x-hidden w-full h-full"
       style="background-image: linear-gradient(to bottom right, #5200FF, #4200FF);" id="container">
       <div class="flex flex-col items-center">
-         <div class="flex gap-1 items-center">
-            <input data-warna="input" class="py-2 px-5 rounded-md focus:outline-none placeholder-blue-200"
+         <form data-warna="form" class="flex gap-1 items-center">
+            <input required data-warna="input" class="py-2 px-5 rounded-md focus:outline-none placeholder-blue-200"
                style="background-color: #3700D4; color: #CCBAFF;" type="url" placeholder="Url gambar...">
-            <button data-warna="btn" class="py-1.5 px-3 rounded-md text-xl"
+            <button class="py-1.5 px-3 rounded-md text-xl"
                style="background-color: #3700D4; color: #CCBAFF;"><i class='bx bx-check'></i></button>
-         </div>
+         </form>
          <p class="text-lg font-bold text-white my-4">ATAU</p>
          <div>
             <label class="py-2 px-5 text-white rounded-md font-bold focus:outline-none" class="w-full" for="upload"
@@ -119,10 +119,12 @@
 
       getColour();
 
-      const btn = document.querySelector('[data-warna="btn"]');
       const upload = document.querySelector('[data-warna="upload"]');
+      const form = document.querySelector('[data-warna="form"]');
 
-      btn.addEventListener('click', () => {
+      form.addEventListener('submit', (e) => {
+         e.preventDefault();
+
          for (let i = 0; i < container.length; i++) {
             const img = container[i].querySelector('img');
             const dominan = container[i].querySelector('[data-warna="dominan"]');
@@ -159,7 +161,7 @@
                });
             }
          }
-      });
+      })
 
       upload.addEventListener('change', () => {
          for (let i = 0; i < container.length; i++) {
