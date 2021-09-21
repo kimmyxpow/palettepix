@@ -10,25 +10,28 @@
    <title>Image Palette</title>
 </head>
 
-<body class="font-montserrat overflow-x-hidden h-full bg-fixed bg-no-repeat" style="background-image: linear-gradient(to bottom right, #5200FF, #4200FF);">
+<body class="font-montserrat overflow-x-hidden h-full bg-fixed bg-no-repeat"
+   style="background-image: linear-gradient(to bottom right, #5200FF, #4200FF);">
    <div class="py-8 w-full h-full absolute inset-0 overflow-x-hidden" id="container">
       <div class="flex flex-col items-center">
          <form data-warna="form" class="flex gap-1 items-center">
             <input required data-warna="input" class="py-2 px-5 rounded-md focus:outline-none placeholder-blue-200"
                style="background-color: #3700D4; color: #CCBAFF;" type="url" placeholder="Url gambar...">
-            <button class="py-1.5 px-3 rounded-md text-xl"
-               style="background-color: #3700D4; color: #CCBAFF;"><i class='bx bx-check'></i></button>
+            <button class="py-1.5 px-3 rounded-md text-xl" style="background-color: #3700D4; color: #CCBAFF;"><i
+                  class='bx bx-check'></i></button>
          </form>
          <p class="text-lg font-bold text-white my-4">ATAU</p>
          <div>
             <label class="py-2 px-5 text-white rounded-md font-bold focus:outline-none" class="w-full" for="upload"
                style="background-color: #3700D4; color: #CCBAFF;">Upload Gambar</label>
-            <input data-warna="upload" class="absolute opacity-0 pointer-events-none" id="upload" accept="image/*" type="file">
+            <input data-warna="upload" class="absolute opacity-0 pointer-events-none" id="upload" accept="image/*"
+               type="file">
          </div>
       </div>
       <div class="grid grid-cols-12 gap-6 mt-8">
          <div class="grid col-span-10 col-start-2 md:grid-cols-2 gap-6" data-warna="container">
-            <img class="w-full rounded-md" src="assets/img/wQLAGv4_OYs.png" alt="">
+            <img class="w-full rounded-md" src="https://abinoval.github.io/image-to-palette/assets/img/wQLAGv4_OYs.png"
+               alt="">
             <div>
                <div class="py-4 px-6 space-y-4 bg-white rounded-md"
                   style="box-shadow: 0 4px 30px rgba(200, 200, 200, 0.1);">
@@ -112,148 +115,7 @@
       </div>
    </div>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.0/color-thief.umd.js"></script>
-   <script>
-      const colorThief = new ColorThief();
-      const container = document.querySelectorAll('div[data-warna="container"]');
-
-      getColour();
-
-      const upload = document.querySelector('[data-warna="upload"]');
-      const form = document.querySelector('[data-warna="form"]');
-
-      form.addEventListener('submit', (e) => {
-         e.preventDefault();
-
-         for (let i = 0; i < container.length; i++) {
-            const img = container[i].querySelector('img');
-            const dominan = container[i].querySelector('[data-warna="dominan"]');
-            const dominanHex = container[i].querySelector('[data-warna="dominan-hex"]');
-            const palet = container[i].querySelectorAll('[data-warna="palet"]');
-            const paletHex = container[i].querySelectorAll('[data-warna="palet-hex"]');
-            img.crossOrigin = "Anonymous";
-            img.setAttribute('src', document.querySelector('[data-warna="input"]').value);
-
-            img.onerror = function (e) {
-               img.setAttribute('src', 'assets/img/wQLAGv4_OYs.png');
-               alert("Maaf, gambar tidak bisa kami temukan!")
-            };
-
-            if (img.complete) {
-               const colour = colorThief.getColor(img);
-               const palette = colorThief.getPalette(img);
-               dominan.style.background = RGBToHex(colour[0], colour[1], colour[2]);
-               dominanHex.innerHTML = RGBToHex(colour[0], colour[1], colour[2]);
-               for (let i = 0; i < palette.length; i++) {
-                  palet[i].style.background = RGBToHex(palette[i][0], palette[i][1], palette[i][2]);
-                  paletHex[i].innerHTML = RGBToHex(palette[i][0], palette[i][1], palette[i][2]);
-               }
-            } else {
-               img.addEventListener('load', () => {
-                  const colour = colorThief.getColor(img);
-                  const palette = colorThief.getPalette(img);
-                  dominan.style.background = RGBToHex(colour[0], colour[1], colour[2]);
-                  dominanHex.innerHTML = RGBToHex(colour[0], colour[1], colour[2]);
-                  for (let i = 0; i < palette.length; i++) {
-                     palet[i].style.background = RGBToHex(palette[i][0], palette[i][1], palette[i][2]);
-                     paletHex[i].innerHTML = RGBToHex(palette[i][0], palette[i][1], palette[i][2]);
-                  }
-               });
-            }
-         }
-
-         form.reset();
-      })
-
-      upload.addEventListener('change', () => {
-         for (let i = 0; i < container.length; i++) {
-            const img = container[i].querySelector('img');
-            const dominan = container[i].querySelector('[data-warna="dominan"]');
-            const dominanHex = container[i].querySelector('[data-warna="dominan-hex"]');
-            const palet = container[i].querySelectorAll('[data-warna="palet"]');
-            const paletHex = container[i].querySelectorAll('[data-warna="palet-hex"]');
-            img.crossOrigin = "Anonymous";
-
-            const [file] = upload.files
-            if (file) {
-               img.src = URL.createObjectURL(file)
-            }
-
-            img.onerror = function (e) {
-               img.setAttribute('src', 'assets/img/wQLAGv4_OYs.png');
-               alert("Maaf, sepertinya yang ada upload bukan gambar!")
-            };
-
-            if (img.complete) {
-               const colour = colorThief.getColor(img);
-               const palette = colorThief.getPalette(img);
-               dominan.style.background = RGBToHex(colour[0], colour[1], colour[2]);
-               dominanHex.innerHTML = RGBToHex(colour[0], colour[1], colour[2]);
-               for (let i = 0; i < palette.length; i++) {
-                  palet[i].style.background = RGBToHex(palette[i][0], palette[i][1], palette[i][2]);
-                  paletHex[i].innerHTML = RGBToHex(palette[i][0], palette[i][1], palette[i][2]);
-               }
-            } else {
-               img.addEventListener('load', () => {
-                  const colour = colorThief.getColor(img);
-                  const palette = colorThief.getPalette(img);
-                  dominan.style.background = RGBToHex(colour[0], colour[1], colour[2]);
-                  dominanHex.innerHTML = RGBToHex(colour[0], colour[1], colour[2]);
-                  for (let i = 0; i < palette.length; i++) {
-                     palet[i].style.background = RGBToHex(palette[i][0], palette[i][1], palette[i][2]);
-                     paletHex[i].innerHTML = RGBToHex(palette[i][0], palette[i][1], palette[i][2]);
-                  }
-               });
-            }
-         }
-      });
-
-      function getColour() {
-         for (let i = 0; i < container.length; i++) {
-            const img = container[i].querySelector('img');
-            const dominan = container[i].querySelector('[data-warna="dominan"]');
-            const dominanHex = container[i].querySelector('[data-warna="dominan-hex"]');
-            const palet = container[i].querySelectorAll('[data-warna="palet"]');
-            const paletHex = container[i].querySelectorAll('[data-warna="palet-hex"]');
-            img.crossOrigin = "Anonymous";
-            if (img.complete) {
-               const colour = colorThief.getColor(img);
-               const palette = colorThief.getPalette(img);
-               dominan.style.background = RGBToHex(colour[0], colour[1], colour[2]);
-               dominanHex.innerHTML = RGBToHex(colour[0], colour[1], colour[2]);
-               for (let i = 0; i < palette.length; i++) {
-                  palet[i].style.background = RGBToHex(palette[i][0], palette[i][1], palette[i][2]);
-                  paletHex[i].innerHTML = RGBToHex(palette[i][0], palette[i][1], palette[i][2]);
-               }
-            } else {
-               img.addEventListener('load', () => {
-                  const colour = colorThief.getColor(img);
-                  const palette = colorThief.getPalette(img);
-                  dominan.style.background = RGBToHex(colour[0], colour[1], colour[2]);
-                  dominanHex.innerHTML = RGBToHex(colour[0], colour[1], colour[2]);
-                  for (let i = 0; i < palette.length; i++) {
-                     palet[i].style.background = RGBToHex(palette[i][0], palette[i][1], palette[i][2]);
-                     paletHex[i].innerHTML = RGBToHex(palette[i][0], palette[i][1], palette[i][2]);
-                  }
-               });
-            }
-         }
-      }
-
-      function RGBToHex(r, g, b) {
-         r = r.toString(16);
-         g = g.toString(16);
-         b = b.toString(16);
-
-         if (r.length == 1)
-            r = "0" + r;
-         if (g.length == 1)
-            g = "0" + g;
-         if (b.length == 1)
-            b = "0" + b;
-
-         return "#" + r + g + b;
-      }
-   </script>
+   <script src="dist/js/script.js"></script>
 </body>
 
 </html>
