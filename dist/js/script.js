@@ -1,10 +1,9 @@
 const colorThief = new ColorThief();
 const container = document.querySelectorAll('div[data-warna="container"]');
-
-getColour("load");
-
 const upload = document.querySelector('[data-warna="upload"]');
 const form = document.querySelector('[data-warna="form"]');
+
+getColour("load");
 
 form.addEventListener('submit', (e) => {
    e.preventDefault();
