@@ -1,0 +1,17 @@
+{
+  "name": "imagecolours_20-9-2021",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Vibrant.min.js",
+  "dependencies": {
+    "autoprefixer": "^10.3.4",
+    "postcss": "^8.3.6",
+    "tailwindcss": "^2.2.15"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "dev": "npx tailwindcss -i ./src/css/style.css -o ./dist/css/style.css"
+  },
+  "author": "",
+  "license": "ISC"
+}

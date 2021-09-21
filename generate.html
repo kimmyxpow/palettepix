@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html class="w-full h-full" lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="dist/css/style.css">
+   <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+   <title>Image Palette</title>
+</head>
+
+<body class="font-montserrat overflow-x-hidden w-full h-full">
+   <div class="py-8 overflow-x-hidden w-full h-full"
+      style="background-image: linear-gradient(to bottom right, #5200FF, #4200FF);" id="container">
+      <div class="flex flex-col items-center">
+         <div class="flex gap-1 items-center">
+            <input data-warna="input" class="py-2 px-5 rounded-md focus:outline-none placeholder-blue-200"
+               style="background-color: #3700D4; color: #CCBAFF;" type="url" placeholder="Url gambar...">
+            <button data-warna="btn" class="py-1.5 px-3 rounded-md text-xl"
+               style="background-color: #3700D4; color: #CCBAFF;"><i class='bx bx-check'></i></button>
+         </div>
+         <p class="text-lg font-bold text-white my-4">ATAU</p>
+         <div>
+            <label class="py-2 px-5 text-white rounded-md font-bold focus:outline-none" class="w-full" for="upload"
+               style="background-color: #3700D4; color: #CCBAFF;">Upload Gambar</label>
+            <input data-warna="upload" class="absolute opacity-0 pointer-events-none" id="upload" type="file">
+         </div>
+      </div>
+      <div class="grid grid-cols-12 gap-6 mt-8">
+         <div class="grid col-span-10 col-start-2 md:grid-cols-2 gap-6" data-warna="container">
+            <img class="w-full rounded-md" src="assets/img/wQLAGv4_OYs.png" alt="">
+            <div>
+               <div class="py-4 px-6 space-y-4 bg-white rounded-md"
+                  style="box-shadow: 0 4px 30px rgba(200, 200, 200, 0.1);">
+                  <div class="space-y-2">
+                     <h2 class="font-bold text-2xl" style="color: #555555;">Warna Dominan</h2>
+                     <div class="flex gap-1 items-center">
+                        <div data-warna="dominan" class="rounded-full sm:w-12 w-8 sm:h-12 h-8"></div>
+                        <p data-warna="dominan-hex" class="font-bold sm:text-lg text-base" style="color: #555555;">
+                           #c4c4c4
+                        </p>
+                     </div>
+                  </div>
+                  <div class="space-y-2">
+                     <h2 class="font-bold text-2xl" style="color: #555555;">Palet Warna</h2>
+                     <div class="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-3 grid-cols-2 gap-2">
+                        <div class="flex gap-1 items-center">
+                           <div data-warna="palet" class="rounded-full sm:w-12 w-8 sm:h-12 h-8"></div>
+                           <p data-warna="palet-hex" class="font-bold sm:text-lg text-base" style="color: #555555;">
+                              #c4c4c4
+                           </p>
+                        </div>
+                        <div class="flex gap-1 items-center">
+                           <div data-warna="palet" class="rounded-full sm:w-12 w-8 sm:h-12 h-8"></div>
+                           <p data-warna="palet-hex" class="font-bold sm:text-lg text-base" style="color: #555555;">
+                              #c4c4c4
+                           </p>
+                        </div>
+                        <div class="flex gap-1 items-center">
+                           <div data-warna="palet" class="rounded-full sm:w-12 w-8 sm:h-12 h-8"></div>
+                           <p data-warna="palet-hex" class="font-bold sm:text-lg text-base" style="color: #555555;">
+                              #c4c4c4
+                           </p>
+                        </div>
+                        <div class="flex gap-1 items-center">
+                           <div data-warna="palet" class="rounded-full sm:w-12 w-8 sm:h-12 h-8"></div>
+                           <p data-warna="palet-hex" class="font-bold sm:text-lg text-base" style="color: #555555;">
+                              #c4c4c4
+                           </p>
+                        </div>
+                        <div class="flex gap-1 items-center">
+                           <div data-warna="palet" class="rounded-full sm:w-12 w-8 sm:h-12 h-8"></div>
+                           <p data-warna="palet-hex" class="font-bold sm:text-lg text-base" style="color: #555555;">
+                              #c4c4c4
+                           </p>
+                        </div>
+                        <div class="flex gap-1 items-center">
+                           <div data-warna="palet" class="rounded-full sm:w-12 w-8 sm:h-12 h-8"></div>
+                           <p data-warna="palet-hex" class="font-bold sm:text-lg text-base" style="color: #555555;">
+                              #c4c4c4
+                           </p>
+                        </div>
+                        <div class="flex gap-1 items-center">
+                           <div data-warna="palet" class="rounded-full sm:w-12 w-8 sm:h-12 h-8"></div>
+                           <p data-warna="palet-hex" class="font-bold sm:text-lg text-base" style="color: #555555;">
+                              #c4c4c4
+                           </p>
+                        </div>
+                        <div class="flex gap-1 items-center">
+                           <div data-warna="palet" class="rounded-full sm:w-12 w-8 sm:h-12 h-8"></div>
+                           <p data-warna="palet-hex" class="font-bold sm:text-lg text-base" style="color: #555555;">
+                              #c4c4c4
+                           </p>
+                        </div>
+                        <div class="flex gap-1 items-center">
+                           <div data-warna="palet" class="rounded-full sm:w-12 w-8 sm:h-12 h-8"></div>
+                           <p data-warna="palet-hex" class="font-bold sm:text-lg text-base" style="color: #555555;">
+                              #c4c4c4
+                           </p>
+                        </div>
+                        <div class="flex gap-1 items-center">
+                           <div data-warna="palet" class="rounded-full sm:w-12 w-8 sm:h-12 h-8"></div>
+                           <p data-warna="palet-hex" class="font-bold sm:text-lg text-base" style="color: #555555;">
+                              #c4c4c4
+                           </p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.0/color-thief.umd.js"></script>
+   <script>
+      const colorThief = new ColorThief();
+      const container = document.querySelectorAll('div[data-warna="container"]');
+
+      getColour();
+
+      const btn = document.querySelector('[data-warna="btn"]');
+      const upload = document.querySelector('[data-warna="upload"]');
+
+      btn.addEventListener('click', () => {
+         for (let i = 0; i < container.length; i++) {
+            const img = container[i].querySelector('img');
+            const dominan = container[i].querySelector('[data-warna="dominan"]');
+            const dominanHex = container[i].querySelector('[data-warna="dominan-hex"]');
+            const palet = container[i].querySelectorAll('[data-warna="palet"]');
+            const paletHex = container[i].querySelectorAll('[data-warna="palet-hex"]');
+            img.crossOrigin = "Anonymous";
+            img.setAttribute('src', document.querySelector('[data-warna="input"]').value);
+
+            img.onerror = function (e) {
+               img.setAttribute('src', 'assets/img/wQLAGv4_OYs.png');
+               alert("Maaf, gambar tidak bisa kami temukan!")
+            };
+
+            if (img.complete) {
+               const colour = colorThief.getColor(img);
+               const palette = colorThief.getPalette(img);
+               dominan.style.background = RGBToHex(colour[0], colour[1], colour[2]);
+               dominanHex.innerHTML = RGBToHex(colour[0], colour[1], colour[2]);
+               for (let i = 0; i < palette.length; i++) {
+                  palet[i].style.background = RGBToHex(palette[i][0], palette[i][1], palette[i][2]);
+                  paletHex[i].innerHTML = RGBToHex(palette[i][0], palette[i][1], palette[i][2]);
+               }
+            } else {
+               img.addEventListener('load', () => {
+                  const colour = colorThief.getColor(img);
+                  const palette = colorThief.getPalette(img);
+                  dominan.style.background = RGBToHex(colour[0], colour[1], colour[2]);
+                  dominanHex.innerHTML = RGBToHex(colour[0], colour[1], colour[2]);
+                  for (let i = 0; i < palette.length; i++) {
+                     palet[i].style.background = RGBToHex(palette[i][0], palette[i][1], palette[i][2]);
+                     paletHex[i].innerHTML = RGBToHex(palette[i][0], palette[i][1], palette[i][2]);
+                  }
+               });
+            }
+         }
+      });
+
+      upload.addEventListener('change', () => {
+         for (let i = 0; i < container.length; i++) {
+            const img = container[i].querySelector('img');
+            const dominan = container[i].querySelector('[data-warna="dominan"]');
+            const dominanHex = container[i].querySelector('[data-warna="dominan-hex"]');
+            const palet = container[i].querySelectorAll('[data-warna="palet"]');
+            const paletHex = container[i].querySelectorAll('[data-warna="palet-hex"]');
+            img.crossOrigin = "Anonymous";
+
+            const [file] = upload.files
+            if (file) {
+               img.src = URL.createObjectURL(file)
+            }
+
+            img.onerror = function (e) {
+               img.setAttribute('src', 'assets/img/wQLAGv4_OYs.png');
+               alert("Maaf, sepertinya yang ada upload bukan gambar!")
+            };
+
+            if (img.complete) {
+               const colour = colorThief.getColor(img);
+               const palette = colorThief.getPalette(img);
+               dominan.style.background = RGBToHex(colour[0], colour[1], colour[2]);
+               dominanHex.innerHTML = RGBToHex(colour[0], colour[1], colour[2]);
+               for (let i = 0; i < palette.length; i++) {
+                  palet[i].style.background = RGBToHex(palette[i][0], palette[i][1], palette[i][2]);
+                  paletHex[i].innerHTML = RGBToHex(palette[i][0], palette[i][1], palette[i][2]);
+               }
+            } else {
+               img.addEventListener('load', () => {
+                  const colour = colorThief.getColor(img);
+                  const palette = colorThief.getPalette(img);
+                  dominan.style.background = RGBToHex(colour[0], colour[1], colour[2]);
+                  dominanHex.innerHTML = RGBToHex(colour[0], colour[1], colour[2]);
+                  for (let i = 0; i < palette.length; i++) {
+                     palet[i].style.background = RGBToHex(palette[i][0], palette[i][1], palette[i][2]);
+                     paletHex[i].innerHTML = RGBToHex(palette[i][0], palette[i][1], palette[i][2]);
+                  }
+               });
+            }
+         }
+      });
+
+      function getColour() {
+         for (let i = 0; i < container.length; i++) {
+            const img = container[i].querySelector('img');
+            const dominan = container[i].querySelector('[data-warna="dominan"]');
+            const dominanHex = container[i].querySelector('[data-warna="dominan-hex"]');
+            const palet = container[i].querySelectorAll('[data-warna="palet"]');
+            const paletHex = container[i].querySelectorAll('[data-warna="palet-hex"]');
+            img.crossOrigin = "Anonymous";
+            if (img.complete) {
+               const colour = colorThief.getColor(img);
+               const palette = colorThief.getPalette(img);
+               dominan.style.background = RGBToHex(colour[0], colour[1], colour[2]);
+               dominanHex.innerHTML = RGBToHex(colour[0], colour[1], colour[2]);
+               for (let i = 0; i < palette.length; i++) {
+                  palet[i].style.background = RGBToHex(palette[i][0], palette[i][1], palette[i][2]);
+                  paletHex[i].innerHTML = RGBToHex(palette[i][0], palette[i][1], palette[i][2]);
+               }
+            } else {
+               img.addEventListener('load', () => {
+                  const colour = colorThief.getColor(img);
+                  const palette = colorThief.getPalette(img);
+                  dominan.style.background = RGBToHex(colour[0], colour[1], colour[2]);
+                  dominanHex.innerHTML = RGBToHex(colour[0], colour[1], colour[2]);
+                  for (let i = 0; i < palette.length; i++) {
+                     palet[i].style.background = RGBToHex(palette[i][0], palette[i][1], palette[i][2]);
+                     paletHex[i].innerHTML = RGBToHex(palette[i][0], palette[i][1], palette[i][2]);
+                  }
+               });
+            }
+         }
+      }
+
+      function RGBToHex(r, g, b) {
+         r = r.toString(16);
+         g = g.toString(16);
+         b = b.toString(16);
+
+         if (r.length == 1)
+            r = "0" + r;
+         if (g.length == 1)
+            g = "0" + g;
+         if (b.length == 1)
+            b = "0" + b;
+
+         return "#" + r + g + b;
+      }
+   </script>
+</body>
+
+</html>
