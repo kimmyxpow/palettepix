@@ -1,14 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-[data-warna="input"],
-[data-warna="input"]+button,
+body {
+   font-family: "montserrat", sans-serif;
+   background-image: linear-gradient(to bottom right, #5200ff, #4200ff);
+}
+
 [for="upload"] {
-   background-color: #3700D4;
-   color: #CCBAFF
+   background-color: #3700d4;
+   color: #ccbaff;
 }
 
 [data-warna="palet-hex"],

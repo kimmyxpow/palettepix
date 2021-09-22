@@ -10,107 +10,101 @@
    <title>Image Palette</title>
 </head>
 
-<body class="font-montserrat overflow-x-hidden h-full bg-fixed bg-no-repeat"
-   style="background-image: linear-gradient(to bottom right, #5200FF, #4200FF);">
+<body class="overflow-x-hidden h-full bg-fixed bg-no-repeat">
    <div class="py-8 w-full h-full absolute inset-0 overflow-x-hidden" id="container">
-      <div class="flex flex-col items-center">
-         <form data-warna="form" class="flex gap-1 items-center">
-            <input required data-warna="input" class="py-2 px-5 rounded-md focus:outline-none placeholder-blue-200" type="url" placeholder="Url gambar...">
-            <button class="py-1.5 px-3 rounded-md text-xl"><i class='bx bx-check'></i></button>
-         </form>
-         <p class="text-lg font-bold text-white my-4">ATAU</p>
+     <div class="flex flex-col items-center">
+       <label class="py-2 px-5 text-white rounded-md font-bold focus:outline-none cursor-pointer" for="upload">Upload Gambar</label>
+       <input data-warna="upload" class="absolute opacity-0 pointer-events-none" id="upload" accept="image/*" type="file">
+     </div>
+ 
+     <div class="grid grid-cols-12 gap-6 mt-8">
+       <div class="grid col-span-10 col-start-2 md:grid-cols-2 gap-6" data-warna="container">
+         <div id="img-container">
+           <img class="w-full rounded-md" src="https://abinoval.github.io/image-to-palette/assets/img/wQLAGv4_OYs.png" alt="">
+         </div>
          <div>
-            <label class="py-2 px-5 text-white rounded-md font-bold focus:outline-none" class="w-full" for="upload">Upload Gambar</label>
-            <input data-warna="upload" class="absolute opacity-0 pointer-events-none" id="upload" accept="image/*" type="file">
-         </div>
-      </div>
-      <div class="grid grid-cols-12 gap-6 mt-8">
-         <div class="grid col-span-10 col-start-2 md:grid-cols-2 gap-6" data-warna="container">
-            <img class="w-full rounded-md" src="https://abinoval.github.io/image-to-palette/assets/img/wQLAGv4_OYs.png" alt="">
-            <div>
-               <div class="py-4 px-6 space-y-4 bg-white rounded-md"
-                  style="box-shadow: 0 4px 30px rgba(200, 200, 200, 0.1);">
-                  <div class="space-y-2">
-                     <h2 class="font-bold text-2xl">Warna Dominan</h2>
-                     <div class="flex gap-1 items-center">
-                        <div data-warna="dominan" class="rounded-full sm:w-12 w-8 sm:h-12 h-8"></div>
-                        <p data-warna="dominan-hex" class="font-bold sm:text-lg text-base">
-                           #c4c4c4
-                        </p>
-                     </div>
-                  </div>
-                  <div class="space-y-2">
-                     <h2 class="font-bold text-2xl">Palet Warna</h2>
-                     <div class="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-3 grid-cols-2 gap-2">
-                        <div class="flex gap-1 items-center">
-                           <div data-warna="palet" class="rounded-full sm:w-12 w-8 sm:h-12 h-8"></div>
-                           <p data-warna="palet-hex" class="font-bold sm:text-lg text-base">
-                              #c4c4c4
-                           </p>
-                        </div>
-                        <div class="flex gap-1 items-center">
-                           <div data-warna="palet" class="rounded-full sm:w-12 w-8 sm:h-12 h-8"></div>
-                           <p data-warna="palet-hex" class="font-bold sm:text-lg text-base">
-                              #c4c4c4
-                           </p>
-                        </div>
-                        <div class="flex gap-1 items-center">
-                           <div data-warna="palet" class="rounded-full sm:w-12 w-8 sm:h-12 h-8"></div>
-                           <p data-warna="palet-hex" class="font-bold sm:text-lg text-base">
-                              #c4c4c4
-                           </p>
-                        </div>
-                        <div class="flex gap-1 items-center">
-                           <div data-warna="palet" class="rounded-full sm:w-12 w-8 sm:h-12 h-8"></div>
-                           <p data-warna="palet-hex" class="font-bold sm:text-lg text-base">
-                              #c4c4c4
-                           </p>
-                        </div>
-                        <div class="flex gap-1 items-center">
-                           <div data-warna="palet" class="rounded-full sm:w-12 w-8 sm:h-12 h-8"></div>
-                           <p data-warna="palet-hex" class="font-bold sm:text-lg text-base">
-                              #c4c4c4
-                           </p>
-                        </div>
-                        <div class="flex gap-1 items-center">
-                           <div data-warna="palet" class="rounded-full sm:w-12 w-8 sm:h-12 h-8"></div>
-                           <p data-warna="palet-hex" class="font-bold sm:text-lg text-base">
-                              #c4c4c4
-                           </p>
-                        </div>
-                        <div class="flex gap-1 items-center">
-                           <div data-warna="palet" class="rounded-full sm:w-12 w-8 sm:h-12 h-8"></div>
-                           <p data-warna="palet-hex" class="font-bold sm:text-lg text-base">
-                              #c4c4c4
-                           </p>
-                        </div>
-                        <div class="flex gap-1 items-center">
-                           <div data-warna="palet" class="rounded-full sm:w-12 w-8 sm:h-12 h-8"></div>
-                           <p data-warna="palet-hex" class="font-bold sm:text-lg text-base">
-                              #c4c4c4
-                           </p>
-                        </div>
-                        <div class="flex gap-1 items-center">
-                           <div data-warna="palet" class="rounded-full sm:w-12 w-8 sm:h-12 h-8"></div>
-                           <p data-warna="palet-hex" class="font-bold sm:text-lg text-base">
-                              #c4c4c4
-                           </p>
-                        </div>
-                        <div class="flex gap-1 items-center">
-                           <div data-warna="palet" class="rounded-full sm:w-12 w-8 sm:h-12 h-8"></div>
-                           <p data-warna="palet-hex" class="font-bold sm:text-lg text-base">
-                              #c4c4c4
-                           </p>
-                        </div>
-                     </div>
-                  </div>
+           <div class="py-4 px-6 space-y-4 bg-white rounded-md" style="box-shadow: 0 4px 30px rgba(200, 200, 200, 0.1);">
+             <div class="space-y-2">
+               <h2 class="font-bold text-2xl">Warna Dominan</h2>
+               <div class="flex gap-1 items-center">
+                 <div data-warna="dominan" class="rounded-full sm:w-12 w-8 sm:h-12 h-8"></div>
+                 <p data-warna="dominan-hex" class="font-bold sm:text-lg text-base">
+                   #c4c4c4
+                 </p>
                </div>
-            </div>
+             </div>
+             <div class="space-y-2">
+               <h2 class="font-bold text-2xl">Palet Warna</h2>
+               <div class="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-3 grid-cols-2 gap-2">
+                 <div class="flex gap-1 items-center">
+                   <div data-warna="palet" class="rounded-full sm:w-12 w-8 sm:h-12 h-8"></div>
+                   <p data-warna="palet-hex" class="font-bold sm:text-lg text-base">
+                     #c4c4c4
+                   </p>
+                 </div>
+                 <div class="flex gap-1 items-center">
+                   <div data-warna="palet" class="rounded-full sm:w-12 w-8 sm:h-12 h-8"></div>
+                   <p data-warna="palet-hex" class="font-bold sm:text-lg text-base">
+                     #c4c4c4
+                   </p>
+                 </div>
+                 <div class="flex gap-1 items-center">
+                   <div data-warna="palet" class="rounded-full sm:w-12 w-8 sm:h-12 h-8"></div>
+                   <p data-warna="palet-hex" class="font-bold sm:text-lg text-base">
+                     #c4c4c4
+                   </p>
+                 </div>
+                 <div class="flex gap-1 items-center">
+                   <div data-warna="palet" class="rounded-full sm:w-12 w-8 sm:h-12 h-8"></div>
+                   <p data-warna="palet-hex" class="font-bold sm:text-lg text-base">
+                     #c4c4c4
+                   </p>
+                 </div>
+                 <div class="flex gap-1 items-center">
+                   <div data-warna="palet" class="rounded-full sm:w-12 w-8 sm:h-12 h-8"></div>
+                   <p data-warna="palet-hex" class="font-bold sm:text-lg text-base">
+                     #c4c4c4
+                   </p>
+                 </div>
+                 <div class="flex gap-1 items-center">
+                   <div data-warna="palet" class="rounded-full sm:w-12 w-8 sm:h-12 h-8"></div>
+                   <p data-warna="palet-hex" class="font-bold sm:text-lg text-base">
+                     #c4c4c4
+                   </p>
+                 </div>
+                 <div class="flex gap-1 items-center">
+                   <div data-warna="palet" class="rounded-full sm:w-12 w-8 sm:h-12 h-8"></div>
+                   <p data-warna="palet-hex" class="font-bold sm:text-lg text-base">
+                     #c4c4c4
+                   </p>
+                 </div>
+                 <div class="flex gap-1 items-center">
+                   <div data-warna="palet" class="rounded-full sm:w-12 w-8 sm:h-12 h-8"></div>
+                   <p data-warna="palet-hex" class="font-bold sm:text-lg text-base">
+                     #c4c4c4
+                   </p>
+                 </div>
+                 <div class="flex gap-1 items-center">
+                   <div data-warna="palet" class="rounded-full sm:w-12 w-8 sm:h-12 h-8"></div>
+                   <p data-warna="palet-hex" class="font-bold sm:text-lg text-base">
+                     #c4c4c4
+                   </p>
+                 </div>
+                 <div class="flex gap-1 items-center">
+                   <div data-warna="palet" class="rounded-full sm:w-12 w-8 sm:h-12 h-8"></div>
+                   <p data-warna="palet-hex" class="font-bold sm:text-lg text-base">
+                     #c4c4c4
+                   </p>
+                 </div>
+               </div>
+             </div>
+           </div>
          </div>
-      </div>
+       </div>
+     </div>
    </div>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.0/color-thief.umd.js"></script>
-   <script src="dist/js/script.js"></script>
-</body>
+ 
+ </body>
 
 </html>
