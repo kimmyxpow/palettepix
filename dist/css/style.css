@@ -894,6 +894,9 @@ video {
 
 body {
   font-family: "montserrat", sans-serif;
+}
+
+.body-generate {
   background-image: linear-gradient(to bottom right, #5200ff, #4200ff);
 }
 
