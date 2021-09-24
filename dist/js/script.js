@@ -89,6 +89,6 @@ function saveStaticDataToFile() {
          type: "blob"
       })
       .then(function (content) {
-         saveAs(content, "archive.zip");
+         saveAs(content, `itp - ${RGBToHex(colour[0], colour[1], colour[2])}.zip`);
       });
 }
