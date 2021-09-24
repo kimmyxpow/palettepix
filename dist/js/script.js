@@ -18,7 +18,7 @@ function getColour(tipe) {
       }
 
       img.addEventListener('error', () => {
-         img.src = "https://abinoval.github.io/image-to-palette/assets/img/wQLAGv4_OYs.png";
+         img.src = "https://raw.githubusercontent.com/abinoval/image-to-palette/master/assets/ico/mstile-310x310.png";
          alert("Maaf, sepertinya yang ada upload bukan gambar!");
       });
    }
