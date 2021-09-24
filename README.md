@@ -2,11 +2,11 @@
 
 Saya membuat website ini menggunakan : 
 - HTML-CSS vanilla (1%)
-- TailwindCSS 2 (99%)
+- [TailwindCSS 2](https://tailwindcss.com/) (99%)
 - Javascript Vanilla
-- Color Thief
-- FileSaver.js
-- JSZip
+- [Color Thief](https://github.com/lokesh/color-thief)
+- [FileSaver.js](https://github.com/eligrey/FileSaver.js/)
+- [JSZip](https://github.com/Stuk/jszip)
 
 Fitur :
 - Ekstrak warna dominan dan palet warna dari gambar yang di upload.
