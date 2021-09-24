@@ -1,5 +1,6 @@
 const colorThief = new ColorThief();
 const container = document.querySelector('div[data-warna="container"]');
+const img = container.querySelector("img");
 
 getColour("load");
 
@@ -8,7 +9,6 @@ document.querySelector('[data-warna="upload"]').addEventListener("change", () =>
 });
 
 function getColour(tipe) {
-   const img = container.querySelector("img");
    img.crossOrigin = "anonymous";
 
    if (tipe == "upload") {
@@ -17,17 +17,17 @@ function getColour(tipe) {
          img.src = URL.createObjectURL(file);
       }
 
-      img.onerror = function (e) {
+      img.addEventListener('error', () => {
          img.src = "https://abinoval.github.io/image-to-palette/assets/img/wQLAGv4_OYs.png";
          alert("Maaf, sepertinya yang ada upload bukan gambar!");
-      };
+      });
    }
 
    if (img.complete) {
-      setAll(img);
+      setAll();
    } else {
       img.addEventListener("load", () => {
-         setAll(img);
+         setAll();
       });
    }
 }
@@ -44,7 +44,7 @@ function RGBToHex(r, g, b) {
    return "#" + r + g + b;
 }
 
-function setAll(img) {
+function setAll() {
    const colour = colorThief.getColor(img);
    const palette = colorThief.getPalette(img);
 
@@ -58,27 +58,26 @@ function setAll(img) {
 }
 
 document.querySelector("#download").addEventListener("click", () => {
-   saveStaticDataToFile()
+   saveStaticDataToFile();
 });
 
 function saveStaticDataToFile() {
-   const img = container.querySelector("img");
    const colour = colorThief.getColor(img);
    const palette = colorThief.getPalette(img);
 
-   let textColours = `Warna Dominan : ${RGBToHex(colour[0], colour[1], colour[2])} \n\nPalet Warna : \n`;
+   let textColours = `Warna Dominan : ${RGBToHex(colour[0],colour[1],colour[2])} \n\nPalet Warna : \n`;
    for (let i = 0; i < palette.length; i++) {
-      textColours += ` - ${RGBToHex(palette[i][0], palette[i][1], palette[i][2])} \n`;
+      textColours += ` - ${RGBToHex(palette[i][0],palette[i][1],palette[i][2])} \n`;
    }
 
-   let cssColours = `--clr-itp-primary: ${RGBToHex(colour[0], colour[1], colour[2])};\n`;
+   let cssColours = `--clr-itp-primary: ${RGBToHex(colour[0],colour[1],colour[2])};\n`;
    for (let i = 0; i < palette.length; i++) {
-      cssColours += `--clr-itp-${i + 1}: ${RGBToHex(palette[i][0], palette[i][1], palette[i][2])}; \n`;
+      cssColours += `--clr-itp-${i + 1}: ${RGBToHex(palette[i][0],palette[i][1],palette[i][2])}; \n`;
    }
 
-   let sassColours = `$clr-itp-primary: ${RGBToHex(colour[0], colour[1], colour[2])};\n`;
+   let sassColours = `$clr-itp-primary: ${RGBToHex(colour[0],colour[1],colour[2])};\n`;
    for (let i = 0; i < palette.length; i++) {
-      sassColours += `$clr-itp-${i + 1}: ${RGBToHex(palette[i][0], palette[i][1], palette[i][2])}; \n`;
+      sassColours += `$clr-itp-${i + 1}: ${RGBToHex(palette[i][0],palette[i][1],palette[i][2])}; \n`;
    }
 
    let zip = new JSZip();
@@ -86,9 +85,8 @@ function saveStaticDataToFile() {
    zip.file("css.txt", cssColours);
    zip.file("sass.txt", sassColours);
    zip.generateAsync({
-         type: "blob"
-      })
-      .then(function (content) {
-         saveAs(content, `itp - ${RGBToHex(colour[0], colour[1], colour[2]).toUpperCase().substring(1)}.zip`);
-      });
+      type: "blob"
+   }).then(function (content) {
+      saveAs(content, `itp - ${RGBToHex(colour[0], colour[1], colour[2]).toUpperCase().substring(1)}.zip`);
+   });
 }
