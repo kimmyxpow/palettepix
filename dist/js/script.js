@@ -72,12 +72,12 @@ function saveStaticDataToFile() {
 
    let cssColours = `--clr-itp-primary: ${RGBToHex(colour[0],colour[1],colour[2])};\n`;
    for (let i = 0; i < palette.length; i++) {
-      cssColours += `--clr-itp-${i + 1}: ${RGBToHex(palette[i][0],palette[i][1],palette[i][2])}; \n`;
+      cssColours += `--clr-itp-${i + 1}: ${RGBToHex(palette[i][0],palette[i][1],palette[i][2])};\n`;
    }
 
    let sassColours = `$clr-itp-primary: ${RGBToHex(colour[0],colour[1],colour[2])};\n`;
    for (let i = 0; i < palette.length; i++) {
-      sassColours += `$clr-itp-${i + 1}: ${RGBToHex(palette[i][0],palette[i][1],palette[i][2])}; \n`;
+      sassColours += `$clr-itp-${i + 1}: ${RGBToHex(palette[i][0],palette[i][1],palette[i][2])};\n`;
    }
 
    let zip = new JSZip();
