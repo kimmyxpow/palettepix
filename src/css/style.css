@@ -22,10 +22,12 @@ body {
    color: #555555;
 }
 
-[data-warna="palet"],
-[data-warna="dominan"] {
-   min-width: 48px;
-   max-width: 48px;
-   min-height: 48px;
-   max-height: 48px;
-}
+@media (min-width: 640px) {
+   [data-warna="palet"],
+   [data-warna="dominan"] {
+     min-width: 48px;
+     max-width: 48px;
+     min-height: 48px;
+     max-height: 48px;
+   }
+} 

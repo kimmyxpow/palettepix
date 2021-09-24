@@ -56,3 +56,39 @@ function setAll(img) {
       container.querySelectorAll('[data-warna="palet-hex"]')[i].innerHTML = RGBToHex(palette[i][0], palette[i][1], palette[i][2]);
    }
 }
+
+document.querySelector("#download").addEventListener("click", () => {
+   saveStaticDataToFile()
+});
+
+function saveStaticDataToFile() {
+   const img = container.querySelector("img");
+   const colour = colorThief.getColor(img);
+   const palette = colorThief.getPalette(img);
+
+   let textColours = `Warna Dominan : ${RGBToHex(colour[0], colour[1], colour[2])} \n\nPalet Warna : \n`;
+   for (let i = 0; i < palette.length; i++) {
+      textColours += ` - ${RGBToHex(palette[i][0], palette[i][1], palette[i][2])} \n`;
+   }
+
+   let cssColours = `--clr-itp-primary: ${RGBToHex(colour[0], colour[1], colour[2])};\n`;
+   for (let i = 0; i < palette.length; i++) {
+      cssColours += `--clr-itp-${i + 1}: ${RGBToHex(palette[i][0], palette[i][1], palette[i][2])}; \n`;
+   }
+
+   let sassColours = `$clr-itp-primary: ${RGBToHex(colour[0], colour[1], colour[2])};\n`;
+   for (let i = 0; i < palette.length; i++) {
+      sassColours += `$clr-itp-${i + 1}: ${RGBToHex(palette[i][0], palette[i][1], palette[i][2])}; \n`;
+   }
+
+   let zip = new JSZip();
+   zip.file("colours.txt", textColours);
+   zip.file("css.txt", cssColours);
+   zip.file("sass.txt", sassColours);
+   zip.generateAsync({
+         type: "blob"
+      })
+      .then(function (content) {
+         saveAs(content, "archive.zip");
+      });
+}
