@@ -27,189 +27,116 @@
    <meta name="msapplication-wide310x150logo" content="assets/ico/mstile-310x150.png" />
    <meta name="msapplication-square310x310logo" content="assets/ico/mstile-310x310.png" />
    <link rel="stylesheet" href="dist/css/style.css">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+   <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
    <title>Image to Palette</title>
 </head>
 
 <body>
-   <div class="w-full h-full pt-8" id="container">
-      <h1 class="text-4xl font-black text-center" style="color: #636363;"><span style="color: #0075FF;">IMAGE</span> TO
-         <span style="color: #BD00FF;">P</span><span style="color: #2400FF;">A</span><span
-            style="color: #9ED600;">L</span><span style="color: #07E036;">E</span><span
-            style="color: #FF8A00;">T</span><span style="color: #EF5151;">T</span><span style="color: #FF00D6;">E</span>
-      </h1>
-      <div class="grid grid-cols-12 gap-6 mt-8">
-         <div class="grid col-span-10 col-start-2 md:grid-cols-2 gap-6">
-            <div class="border rounded-xl overflow-hidden" data-warna="container">
-               <img class="w-full rounded-md" src="assets/img/DPXytK8Z59Y.png" alt="">
-               <div class="py-4 px-6 space-y-4">
-                  <div class="space-y-2">
-                     <h2 class="font-bold text-2xl" style="color: #555555;">Warna Dominan</h2>
-                     <div class="flex gap-1 items-center">
-                        <div data-warna="dominan" class="rounded-full sm:w-12 w-8 sm:h-12 h-8"></div>
-                        <p data-warna="dominan-hex" class="font-bold sm:text-lg text-base" style="color: #555555;">#c4c4c4</p>
-                     </div>
-                  </div>
-                  <div class="space-y-2">
-                     <h2 class="font-bold text-2xl" style="color: #555555;">Palet Warna</h2>
-                     <div class="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-3 grid-cols-2 gap-2">
-                        <div class="flex gap-1 items-center">
-                           <div data-warna="palet" class="rounded-full sm:w-12 w-8 sm:h-12 h-8"></div>
-                           <p data-warna="palet-hex" class="font-bold sm:text-lg text-base" style="color: #555555;">#c4c4c4</p>
-                        </div>
-                        <div class="flex gap-1 items-center">
-                           <div data-warna="palet" class="rounded-full sm:w-12 w-8 sm:h-12 h-8"></div>
-                           <p data-warna="palet-hex" class="font-bold sm:text-lg text-base" style="color: #555555;">#c4c4c4</p>
-                        </div>
-                        <div class="flex gap-1 items-center">
-                           <div data-warna="palet" class="rounded-full sm:w-12 w-8 sm:h-12 h-8"></div>
-                           <p data-warna="palet-hex" class="font-bold sm:text-lg text-base" style="color: #555555;">#c4c4c4</p>
-                        </div>
-                        <div class="flex gap-1 items-center">
-                           <div data-warna="palet" class="rounded-full sm:w-12 w-8 sm:h-12 h-8"></div>
-                           <p data-warna="palet-hex" class="font-bold sm:text-lg text-base" style="color: #555555;">#c4c4c4</p>
-                        </div>
-                        <div class="flex gap-1 items-center">
-                           <div data-warna="palet" class="rounded-full sm:w-12 w-8 sm:h-12 h-8"></div>
-                           <p data-warna="palet-hex" class="font-bold sm:text-lg text-base" style="color: #555555;">#c4c4c4</p>
-                        </div>
-                        <div class="flex gap-1 items-center">
-                           <div data-warna="palet" class="rounded-full sm:w-12 w-8 sm:h-12 h-8"></div>
-                           <p data-warna="palet-hex" class="font-bold sm:text-lg text-base" style="color: #555555;">#c4c4c4</p>
-                        </div>
-                        <div class="flex gap-1 items-center">
-                           <div data-warna="palet" class="rounded-full sm:w-12 w-8 sm:h-12 h-8"></div>
-                           <p data-warna="palet-hex" class="font-bold sm:text-lg text-base" style="color: #555555;">#c4c4c4</p>
-                        </div>
-                        <div class="flex gap-1 items-center">
-                           <div data-warna="palet" class="rounded-full sm:w-12 w-8 sm:h-12 h-8"></div>
-                           <p data-warna="palet-hex" class="font-bold sm:text-lg text-base" style="color: #555555;">#c4c4c4</p>
-                        </div>
-                        <div class="flex gap-1 items-center">
-                           <div data-warna="palet" class="rounded-full sm:w-12 w-8 sm:h-12 h-8"></div>
-                           <p data-warna="palet-hex" class="font-bold sm:text-lg text-base" style="color: #555555;">#c4c4c4</p>
-                        </div>
-                        <div class="flex gap-1 items-center">
-                           <div data-warna="palet" class="rounded-full sm:w-12 w-8 sm:h-12 h-8"></div>
-                           <p data-warna="palet-hex" class="font-bold sm:text-lg text-base" style="color: #555555;">#c4c4c4</p>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <div class="border rounded-xl overflow-hidden" data-warna="container">
-               <img class="w-full rounded-md" src="assets/img/wQLAGv4_OYs.png" alt="">
-               <div class="py-4 px-6 space-y-4">
-                  <div class="space-y-2">
-                     <h2 class="font-bold text-2xl" style="color: #555555;">Warna Dominan</h2>
-                     <div class="flex gap-1 items-center">
-                        <div data-warna="dominan" class="rounded-full sm:w-12 w-8 sm:h-12 h-8"></div>
-                        <p data-warna="dominan-hex" class="font-bold sm:text-lg text-base" style="color: #555555;">#c4c4c4</p>
-                     </div>
-                  </div>
-                  <div class="space-y-2">
-                     <h2 class="font-bold text-2xl" style="color: #555555;">Palet Warna</h2>
-                     <div class="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-3 grid-cols-2 gap-2">
-                        <div class="flex gap-1 items-center">
-                           <div data-warna="palet" class="rounded-full sm:w-12 w-8 sm:h-12 h-8"></div>
-                           <p data-warna="palet-hex" class="font-bold sm:text-lg text-base" style="color: #555555;">#c4c4c4</p>
-                        </div>
-                        <div class="flex gap-1 items-center">
-                           <div data-warna="palet" class="rounded-full sm:w-12 w-8 sm:h-12 h-8"></div>
-                           <p data-warna="palet-hex" class="font-bold sm:text-lg text-base" style="color: #555555;">#c4c4c4</p>
-                        </div>
-                        <div class="flex gap-1 items-center">
-                           <div data-warna="palet" class="rounded-full sm:w-12 w-8 sm:h-12 h-8"></div>
-                           <p data-warna="palet-hex" class="font-bold sm:text-lg text-base" style="color: #555555;">#c4c4c4</p>
-                        </div>
-                        <div class="flex gap-1 items-center">
-                           <div data-warna="palet" class="rounded-full sm:w-12 w-8 sm:h-12 h-8"></div>
-                           <p data-warna="palet-hex" class="font-bold sm:text-lg text-base" style="color: #555555;">#c4c4c4</p>
-                        </div>
-                        <div class="flex gap-1 items-center">
-                           <div data-warna="palet" class="rounded-full sm:w-12 w-8 sm:h-12 h-8"></div>
-                           <p data-warna="palet-hex" class="font-bold sm:text-lg text-base" style="color: #555555;">#c4c4c4</p>
-                        </div>
-                        <div class="flex gap-1 items-center">
-                           <div data-warna="palet" class="rounded-full sm:w-12 w-8 sm:h-12 h-8"></div>
-                           <p data-warna="palet-hex" class="font-bold sm:text-lg text-base" style="color: #555555;">#c4c4c4</p>
-                        </div>
-                        <div class="flex gap-1 items-center">
-                           <div data-warna="palet" class="rounded-full sm:w-12 w-8 sm:h-12 h-8"></div>
-                           <p data-warna="palet-hex" class="font-bold sm:text-lg text-base" style="color: #555555;">#c4c4c4</p>
-                        </div>
-                        <div class="flex gap-1 items-center">
-                           <div data-warna="palet" class="rounded-full sm:w-12 w-8 sm:h-12 h-8"></div>
-                           <p data-warna="palet-hex" class="font-bold sm:text-lg text-base" style="color: #555555;">#c4c4c4</p>
-                        </div>
-                        <div class="flex gap-1 items-center">
-                           <div data-warna="palet" class="rounded-full sm:w-12 w-8 sm:h-12 h-8"></div>
-                           <p data-warna="palet-hex" class="font-bold sm:text-lg text-base" style="color: #555555;">#c4c4c4</p>
-                        </div>
-                        <div class="flex gap-1 items-center">
-                           <div data-warna="palet" class="rounded-full sm:w-12 w-8 sm:h-12 h-8"></div>
-                           <p data-warna="palet-hex" class="font-bold sm:text-lg text-base" style="color: #555555;">#c4c4c4</p>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-      <div class="flex justify-center items-center" style="margin: 50vh 0;">
-         <a href="generate.html" class="font-semibold text-4xl text-white py-5 px-14 rounded-xl"
-            style="background-image: linear-gradient(to bottom right, #5200FF, #4200FF);">Coba</a>
-      </div>
+   <div class="w-full min-h-screen overflow-x-hidden relative">
+		<nav class="py-4 bg-white fixed inset-x-0 top-0 border-b border-gray-100 z-50">
+			<div class="container px-8 mx-auto flex items-center relative">
+				<a class="text-xl text-gray-800 font-black tracking-widest" href="#">ITP<span class="text-primary">.</span></a>
+				<div class="flex justify-between items-center w-full">
+					<div class="flex justify-between items-center w-full ml-6">
+						<div class="sm:relative flex flex-col" x-data="{ open: false }">
+							<button x-on:click="open = ! open" x-on:keydown.escape="open = false"  class="text-sm font-medium hover:text-gray-600 flex items-center gap-1 transition-all duration-300" x-bind:class="open ? 'text-gray-600' : 'text-gray-400'" href="#">More From Me <i class='bx bx-chevron-up text-xl transition-all duration-300' x-bind:class="open ? 'rotate-120' : 'rotate-180'"></i></button>
+							<template x-if="true">
+								<div x-show="open" x-on:click.away="open = false" x-transition.duration.300ms class="absolute sm:w-[500px] bg-white shadow-2xl shadow-primary/30 p-4 rounded-3xl top-full inset-x-0">
+									<div class="space-y-4">
+									<a href="#" class="flex gap-2 hover:bg-gray-100 p-4 rounded-xl transition-all duration-300 relative group">
+										<div class="rounded-2xl min-h-[3rem] max-h-[3rem] min-w-[3rem] max-w-[3rem] bg-gradient-to-br from-indigo-600 to-blue-500 shadow-xl shadow-indigo-600/30 flex justify-center items-center">
+											<i class='bx bx-happy-heart-eyes text-white text-xl'></i>
+										</div>
+										<div>
+											<h2 class="text-lg font-bold text-gray-800">Name Generator</h2>
+											<p class="text-sm text-gray-400 tracking-wide">
+												Get a cool name here!
+											</p>
+										</div>
+										<i class='bx bx-right-arrow-alt text-gray-800 absolute top-1/2 right-6 -translate-y-1/2 translate-x-6 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300' ></i>
+									</a>
+									<a href="#" class="flex gap-2 hover:bg-gray-100 p-4 rounded-xl transition-all duration-300 relative group">
+										<div class="rounded-2xl min-h-[3rem] max-h-[3rem] min-w-[3rem] max-w-[3rem] bg-gradient-to-br from-pink-500 to-fuchsia-500 shadow-xl shadow-pink-500/30 flex justify-center items-center">
+											<i class='bx bx-code-alt text-white text-xl'></i>
+										</div>
+										<div>
+											<h2 class="text-lg font-bold text-gray-800">My Code</h2>
+											<p class="text-sm text-gray-400 tracking-wide">
+												Code snippet to share your code!
+											</p>
+										</div>
+										<i class='bx bx-right-arrow-alt text-gray-800 absolute top-1/2 right-6 -translate-y-1/2 translate-x-6 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300' ></i>
+									</a>
+									<a href="#" class="flex gap-2 hover:bg-gray-100 p-4 rounded-xl transition-all duration-300 relative group">
+										<div class="rounded-2xl min-h-[3rem] max-h-[3rem] min-w-[3rem] max-w-[3rem] bg-gradient-to-br from-green-500 to-emerald-400 shadow-xl shadow-green-500/30 flex justify-center items-center">
+											<i class='bx bx-book-bookmark text-white text-xl'></i>
+										</div>
+										<div>
+											<h2 class="text-lg font-bold text-gray-800">PowQuran</h2>
+											<p class="text-sm text-gray-400 tracking-wide">
+												Read the Quran online anywhere!
+											</p>
+										</div>
+										<i class='bx bx-right-arrow-alt text-gray-800 absolute top-1/2 right-6 -translate-y-1/2 translate-x-6 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300' ></i>
+									</a>
+									</div>
+								</div>
+							</template>
+						</div>
+						<div class="flex gap-1">
+							<button class="hover:bg-gray-100 text-gray-800 h-10 w-10 rounded-full grid place-items-center transition-all duration-300">
+								<i class='bx bx-moon text-xl'></i>
+							</button>
+							<button class="hover:bg-gray-100 text-gray-800 h-10 w-10 rounded-full grid place-items-center transition-all duration-300">
+								<i class='bx bxl-github text-xl'></i>
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</nav>
+
+		<main class="lg:min-h-screen flex justify-center items-center lg:mt-0 mt-14 relative">
+			<div class="container px-8 grid lg:grid-cols-2 items-center gap-x-10">
+				<div class="space-y-4 ld:order-1 order-2">
+					<h1 class="text-6xl font-black text-gray-800">Get <span class="text-primary underline">Palettes</span> from Your <span class="text-primary underline">Photos</span>!</h1>
+					<p class="text-gray-600 tracking-wide ">
+						Get any color of any image you want for free!
+					</p>
+					<a class="btn btn-primary gap-1" href="#">Try Now!</a>
+				</div>
+				<div  class="relative lg:order-2 order-1">
+					<img class="rounded-xl transition-all duration-300" src="./assets/img/lidya-nada-tXz6g8JYYoI-unsplash.jpg" alt="">
+				</div>
+			</div>
+		</main>
+		<section class="my-20">
+			<div class="container px-8 mx-auto">
+				<label class="btn btn-primary" for="image-upload">Change Image</label>
+				<input type="file" id="image-upload" class="absolute opacity-0 pointer-events-none">
+
+				<div class="grid md:grid-cols-2 gap-10 mt-10">
+					<img class="rounded-xl" id="image-preview" alt="Image Upload">
+					<div class="space-y-4">
+						<h2 class="uppercase font-bold tracking-widest text-gray-400">Dominant Color</h2>
+						<div class="flex gap-1 items-center" id="dominant-color">
+							Wait...
+						</div>
+						<h2 class="uppercase font-bold tracking-widest text-gray-400">Pallete</h2>
+						<div class="flex flex-wrap gap-4" id="palette">
+							Wait...
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
    </div>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.0/color-thief.umd.js"></script>
-   <script>
-      const colorThief = new ColorThief();
-      const container = document.querySelectorAll('div[data-warna="container"]');
-
-      for (let i = 0; i < container.length; i++) {
-         const img = container[i].querySelector('img');
-         const dominan = container[i].querySelector('[data-warna="dominan"]');
-         const dominanHex = container[i].querySelector('[data-warna="dominan-hex"]');
-         const palet = container[i].querySelectorAll('[data-warna="palet"]');
-         const paletHex = container[i].querySelectorAll('[data-warna="palet-hex"]');
-         img.crossOrigin = "Anonymous";
-         if (img.complete) {
-            const colour = colorThief.getColor(img);
-            const palette = colorThief.getPalette(img);
-            dominan.style.background = RGBToHex(colour[0], colour[1], colour[2]);
-            dominanHex.innerHTML = RGBToHex(colour[0], colour[1], colour[2]);
-            for (let i = 0; i < palette.length; i++) {
-               palet[i].style.background = RGBToHex(palette[i][0], palette[i][1], palette[i][2])
-               paletHex[i].innerHTML = RGBToHex(palette[i][0], palette[i][1], palette[i][2])
-            }
-         } else {
-            img.addEventListener('load', () => {
-               const colour = colorThief.getColor(img);
-               const palette = colorThief.getPalette(img);
-               dominan.style.background = RGBToHex(colour[0], colour[1], colour[2]);
-               dominanHex.innerHTML = RGBToHex(colour[0], colour[1], colour[2]);
-               for (let i = 0; i < palette.length; i++) {
-                  palet[i].style.background = RGBToHex(palette[i][0], palette[i][1], palette[i][2])
-                  paletHex[i].innerHTML = RGBToHex(palette[i][0], palette[i][1], palette[i][2])
-               }
-            })
-         }
-      }
-
-      function RGBToHex(r, g, b) {
-         r = r.toString(16);
-         g = g.toString(16);
-         b = b.toString(16);
-
-         if (r.length == 1)
-            r = "0" + r;
-         if (g.length == 1)
-            g = "0" + g;
-         if (b.length == 1)
-            b = "0" + b;
-
-         return "#" + r + g + b;
-      }
-   </script>
+	<script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.0/color-thief.umd.js"></script>
+	<script src="./dist/js/script.js"></script>
 </body>
 
 </html>

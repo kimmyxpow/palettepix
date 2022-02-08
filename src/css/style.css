@@ -1,33 +1,26 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap");
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-body {
-   font-family: "montserrat", sans-serif;
+.transition-landing {
+    @apply bg-secondary fixed top-0 inset-x-0 z-[999];
 }
 
-.body-generate {
-   background-image: linear-gradient(to bottom right, #5200ff, #4200ff);
+.transition-landing.show {
+  animation: h 1000ms forwards;
+  -webkit-animation: h 1000ms forwards;
 }
 
-[for="upload"] {
-   background-color: #3700d4;
-   color: #ccbaff;
-}
+@keyframes h {
+  0% {
+    height: 0;
+  }
 
-[data-warna="palet-hex"],
-[data-warna="dominan-hex"] {
-   color: #555555;
-}
+  50% {
+    height: 100vh;
+  }
 
-@media (min-width: 640px) {
-   [data-warna="palet"],
-   [data-warna="dominan"] {
-     min-width: 48px;
-     max-width: 48px;
-     min-height: 48px;
-     max-height: 48px;
-   }
-} 
+  100% {
+    height: 0;
+  }
+}

@@ -1,92 +1,82 @@
 const colorThief = new ColorThief();
-const container = document.querySelector('div[data-warna="container"]');
-const img = container.querySelector("img");
+const imagePreview = document.querySelector('#image-preview');
+const imageUpload = document.querySelector('#image-upload');
 
-getColour("load");
-
-document.querySelector('[data-warna="upload"]').addEventListener("change", () => {
-   getColour("upload");
-});
-
-function getColour(tipe) {
-   img.crossOrigin = "anonymous";
-
-   if (tipe == "upload") {
-      const [file] = upload.files;
-      if (file) {
-         img.src = URL.createObjectURL(file);
-      }
-
-      img.addEventListener('error', () => {
-         img.src = "https://raw.githubusercontent.com/abinoval/image-to-palette/master/assets/ico/mstile-310x310.png";
-         alert("Maaf, sepertinya yang ada upload bukan gambar!");
-      });
-   }
-
-   if (img.complete) {
-      setAll();
-   } else {
-      img.addEventListener("load", () => {
-         setAll();
-      });
-   }
+if ('src' in localStorage) {
+    imagePreview.src = localStorage.getItem('src');
+} else {
+    localStorage.setItem(
+        'src',
+        './assets/img/lidya-nada-tXz6g8JYYoI-unsplash.jpg'
+    );
+    imagePreview.src = localStorage.getItem('src');
 }
+
+getAll(imagePreview);
 
 function RGBToHex(r, g, b) {
-   r = r.toString(16);
-   g = g.toString(16);
-   b = b.toString(16);
+    r = r.toString(16);
+    g = g.toString(16);
+    b = b.toString(16);
 
-   if (r.length == 1) r = "0" + r;
-   if (g.length == 1) g = "0" + g;
-   if (b.length == 1) b = "0" + b;
+    if (r.length == 1) r = '0' + r;
+    if (g.length == 1) g = '0' + g;
+    if (b.length == 1) b = '0' + b;
 
-   return "#" + r + g + b;
+    return '#' + r + g + b;
 }
 
-function setAll() {
-   const colour = colorThief.getColor(img);
-   const palette = colorThief.getPalette(img);
+function getColor() {
+    const color = colorThief.getColor(imagePreview);
+    const hexColor = RGBToHex(color[0], color[1], color[2]);
+    const dominantColor = document.querySelector('#dominant-color');
 
-   container.querySelector('[data-warna="dominan"]').style.background = `rgb(${colour})`;
-   container.querySelector('[data-warna="dominan-hex"]').innerHTML = RGBToHex(colour[0], colour[1], colour[2]);
-
-   for (let i = 0; i < palette.length; i++) {
-      container.querySelectorAll('[data-warna="palet"]')[i].style.background = `rgb(${palette[i]})`;
-      container.querySelectorAll('[data-warna="palet-hex"]')[i].innerHTML = RGBToHex(palette[i][0], palette[i][1], palette[i][2]);
-   }
+    dominantColor.innerHTML = `<div class="shadow-xl shadow-[${hexColor}]/40 h-10 w-10 rounded-full" style="background-color: ${hexColor}; --tw-shadow-color: rgb(${color[0]} ${color[1]} ${color[2]} / 0.4); --tw-shadow: var(--tw-shadow-colored); "></div><span class="font-bold uppercase text-gray-800">${hexColor}</span>`;
 }
 
-document.querySelector("#download").addEventListener("click", () => {
-   saveStaticDataToFile();
+function getPalette() {
+    const colors = colorThief.getPalette(imagePreview);
+
+    let allColor = '';
+
+    colors.forEach((color) => {
+        const hexColor = RGBToHex(color[0], color[1], color[2]);
+        const palette = document.querySelector('#palette');
+
+        allColor += `<div class="flex gap-1 items-center"><div class="shadow-xl shadow-[${hexColor}]/40 h-10 w-10 rounded-full" style="background-color: ${hexColor}; --tw-shadow-color: rgb(${color[0]} ${color[1]} ${color[2]} / 0.4); --tw-shadow: var(--tw-shadow-colored);"></div><span class="font-bold uppercase text-gray-800">${hexColor}</span></div>`;
+
+        palette.innerHTML = allColor;
+    });
+}
+
+function getAll() {
+    if (imagePreview.complete) {
+        getColor();
+        getPalette();
+    } else {
+        imagePreview.addEventListener('load', function () {
+            getColor();
+            getPalette();
+        });
+    }
+}
+
+imageUpload.addEventListener('change', (e) => {
+    const oFReader = new FileReader();
+
+    if (e.target.files[0]['type'].split('/')[0] === 'image') {
+        oFReader.readAsDataURL(e.target.files[0]);
+
+        oFReader.onload = function (oFREvent) {
+            const src = oFREvent.target.result;
+            imagePreview.src = src;
+
+            localStorage.setItem('src', src);
+        };
+    } else {
+        alert('Looks like what you uploaded is not an image :(');
+        imagePreview.src = localStorage.getItem('src');
+    }
+
+    getAll();
 });
-
-function saveStaticDataToFile() {
-   const colour = colorThief.getColor(img);
-   const palette = colorThief.getPalette(img);
-
-   let textColours = `Warna Dominan : ${RGBToHex(colour[0],colour[1],colour[2])} \n\nPalet Warna : \n`;
-   for (let i = 0; i < palette.length; i++) {
-      textColours += ` - ${RGBToHex(palette[i][0],palette[i][1],palette[i][2])} \n`;
-   }
-
-   let cssColours = `--clr-itp-primary: ${RGBToHex(colour[0],colour[1],colour[2])};\n`;
-   for (let i = 0; i < palette.length; i++) {
-      cssColours += `--clr-itp-${i + 1}: ${RGBToHex(palette[i][0],palette[i][1],palette[i][2])};\n`;
-   }
-
-   let sassColours = `$clr-itp-primary: ${RGBToHex(colour[0],colour[1],colour[2])};\n`;
-   for (let i = 0; i < palette.length; i++) {
-      sassColours += `$clr-itp-${i + 1}: ${RGBToHex(palette[i][0],palette[i][1],palette[i][2])};\n`;
-   }
-
-   let zip = new JSZip();
-   zip.file("colours.txt", textColours);
-   zip.file("css.txt", cssColours);
-   zip.file("sass.txt", sassColours);
-   zip.generateAsync({
-      type: "blob"
-   }).then(function (content) {
-      saveAs(content, `itp - ${RGBToHex(colour[0], colour[1], colour[2]).toUpperCase().substring(1)}.zip`);
-   });
-}

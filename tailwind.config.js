@@ -1,14 +1,14 @@
 module.exports = {
-  purge: {
-    enabled: true,
-    content: ['index.html', 'generate.html']
-  },
-  darkMode: false, // or 'media' or 'class'
-  theme: {
-    extend: {},
-  },
-  variants: {
-    extend: {},
-  },
-  plugins: [],
-}
+    content: ['./*.html'],
+    theme: {
+        extend: {
+            fontFamily: {
+                sans: ['Poppins', 'sans-serif'],
+            },
+        },
+    },
+    daisyui: {
+        themes: false,
+    },
+    plugins: [require('daisyui')],
+};
