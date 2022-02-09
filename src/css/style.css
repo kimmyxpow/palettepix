@@ -2,25 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.transition-landing {
-    @apply bg-secondary fixed top-0 inset-x-0 z-[999];
-}
-
-.transition-landing.show {
-  animation: h 1000ms forwards;
-  -webkit-animation: h 1000ms forwards;
-}
-
-@keyframes h {
-  0% {
-    height: 0;
-  }
-
-  50% {
-    height: 100vh;
-  }
-
-  100% {
-    height: 0;
-  }
+html {
+  scroll-behavior: smooth;
 }

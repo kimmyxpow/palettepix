@@ -91,7 +91,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "npx tailwindcss -i ./src/css/style.css -o ./dist/css/style.css --watch"
+    "watch": "npx tailwindcss -i ./src/css/style.css -o ./dist/css/style.css --watch",
+    "minify": "npx tailwindcss -i ./src/css/style.css -o ./dist/css/style.css --minify"
   },
   "repository": {
     "type": "git",

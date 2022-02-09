@@ -72,11 +72,12 @@ imageUpload.addEventListener('change', (e) => {
             imagePreview.src = src;
 
             localStorage.setItem('src', src);
+            getAll();
         };
     } else {
         alert('Looks like what you uploaded is not an image :(');
         imagePreview.src = localStorage.getItem('src');
+        getAll();
     }
 
-    getAll();
 });
