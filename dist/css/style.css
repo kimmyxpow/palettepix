@@ -1166,6 +1166,10 @@ html {
   flex-direction: column;
 }
 
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
 .place-items-center {
   place-items: center;
 }
@@ -1196,6 +1200,10 @@ html {
 
 .gap-4 {
   gap: 1rem;
+}
+
+.gap-8 {
+  gap: 2rem;
 }
 
 .gap-y-6 {
