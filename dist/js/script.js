@@ -29,7 +29,7 @@ function getColor() {
 		const hexColor = RGBToHex(color[0], color[1], color[2]);
 		const dominantColor = document.querySelector("#dominant-color");
 
-		dominantColor.innerHTML = `<div class="shadow-xl shadow-[${hexColor}]/40 h-10 w-10 rounded-full" style="background-color: ${hexColor}; --tw-shadow-color: rgb(${color[0]} ${color[1]} ${color[2]} / 0.4); --tw-shadow: var(--tw-shadow-colored); "></div><span class="font-bold uppercase text-gray-800">${hexColor}</span>`;
+		dominantColor.innerHTML = `<div class="shadow-xl shadow-[${hexColor}]/40 h-10 w-10 rounded-full" style="background-color: ${hexColor}; --tw-shadow-color: rgb(${color[0]} ${color[1]} ${color[2]} / 0.4); --tw-shadow: var(--tw-shadow-colored); "></div><span class="font-bold uppercase text-gray-800 dark:text-gray-100">${hexColor}</span>`;
 	} catch (e) {
 		alert("There was an error when picking the dominant color!! Please re-upload the image!");
 		localStorage.setItem("src", "./assets/img/lidya-nada-tXz6g8JYYoI-unsplash.jpg");
@@ -49,7 +49,7 @@ function getPalette() {
 			const hexColor = RGBToHex(color[0], color[1], color[2]);
 			const palette = document.querySelector("#palette");
 
-			allColor += `<div class="flex gap-1 items-center"><div class="shadow-xl shadow-[${hexColor}]/40 h-10 w-10 rounded-full" style="background-color: ${hexColor}; --tw-shadow-color: rgb(${color[0]} ${color[1]} ${color[2]} / 0.4); --tw-shadow: var(--tw-shadow-colored);"></div><span class="font-bold uppercase text-gray-800">${hexColor}</span></div>`;
+			allColor += `<div class="flex gap-1 items-center"><div class="shadow-xl shadow-[${hexColor}]/40 h-10 w-10 rounded-full" style="background-color: ${hexColor}; --tw-shadow-color: rgb(${color[0]} ${color[1]} ${color[2]} / 0.4); --tw-shadow: var(--tw-shadow-colored);"></div><span class="font-bold uppercase text-gray-800 dark:text-gray-100">${hexColor}</span></div>`;
 
 			palette.innerHTML = allColor;
 		});
@@ -92,4 +92,36 @@ imageUpload.addEventListener("change", (e) => {
 		imagePreview.src = localStorage.getItem("src");
 		getAll();
 	}
+});
+
+// Dark Mode
+
+const lightMode = document.querySelector("#lightMode");
+const darkMode = document.querySelector("#darkMode");
+
+if (
+	localStorage.theme === "dark" ||
+	(!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)
+) {
+	document.documentElement.classList.add("dark");
+	darkMode.classList.add("hidden");
+	lightMode.classList.add("block");
+} else {
+	document.documentElement.classList.remove("dark");
+	darkMode.classList.remove("hidden");
+	lightMode.classList.add("hidden");
+}
+
+darkMode.addEventListener("click", () => {
+	localStorage.theme = "dark";
+	document.documentElement.classList.add("dark");
+	darkMode.classList.add("hidden");
+	lightMode.classList.remove("hidden");
+});
+
+lightMode.addEventListener("click", () => {
+	localStorage.theme = "light";
+	document.documentElement.classList.remove("dark");
+	darkMode.classList.remove("hidden");
+	lightMode.classList.add("hidden");
 });

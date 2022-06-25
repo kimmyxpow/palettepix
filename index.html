@@ -1,141 +1,263 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<!-- <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="apple-touch-icon-precomposed" sizes="57x57" href="apple-touch-icon-57x57.png" />
+		<link
+			rel="apple-touch-icon-precomposed"
+			sizes="114x114"
+			href="assets/ico/apple-touch-icon-114x114.png"
+		/>
+		<link
+			rel="apple-touch-icon-precomposed"
+			sizes="72x72"
+			href="assets/ico/apple-touch-icon-72x72.png"
+		/>
+		<link
+			rel="apple-touch-icon-precomposed"
+			sizes="144x144"
+			href="assets/ico/apple-touch-icon-144x144.png"
+		/>
+		<link
+			rel="apple-touch-icon-precomposed"
+			sizes="60x60"
+			href="assets/ico/apple-touch-icon-60x60.png"
+		/>
+		<link
+			rel="apple-touch-icon-precomposed"
+			sizes="120x120"
+			href="assets/ico/apple-touch-icon-120x120.png"
+		/>
+		<link
+			rel="apple-touch-icon-precomposed"
+			sizes="76x76"
+			href="assets/ico/apple-touch-icon-76x76.png"
+		/>
+		<link
+			rel="apple-touch-icon-precomposed"
+			sizes="152x152"
+			href="assets/ico/apple-touch-icon-152x152.png"
+		/>
+		<link rel="icon" type="image/png" href="assets/ico/favicon-196x196.png" sizes="196x196" />
+		<link rel="icon" type="image/png" href="assets/ico/favicon-96x96.png" sizes="96x96" />
+		<link rel="icon" type="image/png" href="assets/ico/favicon-32x32.png" sizes="32x32" />
+		<link rel="icon" type="image/png" href="assets/ico/favicon-16x16.png" sizes="16x16" />
+		<link rel="icon" type="image/png" href="assets/ico/favicon-128.png" sizes="128x128" />
+		<meta name="application-name" content="&nbsp;" />
+		<meta name="msapplication-TileColor" content="#FFFFFF" />
+		<meta name="msapplication-TileImage" content="assets/ico/mstile-144x144.png" />
+		<meta name="msapplication-square70x70logo" content="assets/ico/mstile-70x70.png" />
+		<meta name="msapplication-square150x150logo" content="assets/ico/mstile-150x150.png" />
+		<meta name="msapplication-wide310x150logo" content="assets/ico/mstile-310x150.png" />
+		<meta name="msapplication-square310x310logo" content="assets/ico/mstile-310x310.png" />
+		<link rel="stylesheet" href="dist/css/style.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+			rel="stylesheet"
+		/>
+		<link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet" />
+		<script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+		<title>Image to Palette</title>
+	</head>
 
-<head>
-   <!-- <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="apple-touch-icon-precomposed" sizes="57x57" href="apple-touch-icon-57x57.png" />
-   <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114x114.png" />
-   <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72x72.png" />
-   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144x144.png" />
-   <link rel="apple-touch-icon-precomposed" sizes="60x60" href="assets/ico/apple-touch-icon-60x60.png" />
-   <link rel="apple-touch-icon-precomposed" sizes="120x120" href="assets/ico/apple-touch-icon-120x120.png" />
-   <link rel="apple-touch-icon-precomposed" sizes="76x76" href="assets/ico/apple-touch-icon-76x76.png" />
-   <link rel="apple-touch-icon-precomposed" sizes="152x152" href="assets/ico/apple-touch-icon-152x152.png" />
-   <link rel="icon" type="image/png" href="assets/ico/favicon-196x196.png" sizes="196x196" />
-   <link rel="icon" type="image/png" href="assets/ico/favicon-96x96.png" sizes="96x96" />
-   <link rel="icon" type="image/png" href="assets/ico/favicon-32x32.png" sizes="32x32" />
-   <link rel="icon" type="image/png" href="assets/ico/favicon-16x16.png" sizes="16x16" />
-   <link rel="icon" type="image/png" href="assets/ico/favicon-128.png" sizes="128x128" />
-   <meta name="application-name" content="&nbsp;"/>
-   <meta name="msapplication-TileColor" content="#FFFFFF" />
-   <meta name="msapplication-TileImage" content="assets/ico/mstile-144x144.png" />
-   <meta name="msapplication-square70x70logo" content="assets/ico/mstile-70x70.png" />
-   <meta name="msapplication-square150x150logo" content="assets/ico/mstile-150x150.png" />
-   <meta name="msapplication-wide310x150logo" content="assets/ico/mstile-310x150.png" />
-   <meta name="msapplication-square310x310logo" content="assets/ico/mstile-310x310.png" />
-   <link rel="stylesheet" href="dist/css/style.css">
-   <link rel="preconnect" href="https://fonts.googleapis.com">
-   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-   <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
-   <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-   <title>Image to Palette</title>
-</head>
-
-<body>
-   <div class="w-full min-h-screen overflow-x-hidden relative">
-		<nav class="py-4 bg-white fixed inset-x-0 top-0 border-b border-gray-100 z-50">
-			<div class="container px-8 mx-auto flex items-center relative">
-				<a class="text-xl text-gray-800 font-black tracking-widest" href="#">ITP<span class="text-primary">.</span></a>
-				<div class="flex justify-between items-center w-full">
-					<div class="flex justify-between items-center w-full ml-6">
-						<div class="sm:relative flex flex-col" x-data="{ open: false }">
-							<button x-on:click="open = ! open" x-on:keydown.escape="open = false"  class="text-sm font-medium hover:text-gray-600 flex items-center gap-1 transition-all duration-300" x-bind:class="open ? 'text-gray-600' : 'text-gray-400'" href="#">More From Me <i class='bx bx-chevron-up text-xl transition-all duration-300' x-bind:class="open ? 'rotate-120' : 'rotate-180'"></i></button>
-							<template x-if="true">
-								<div x-show="open" x-on:click.away="open = false" x-transition.duration.300ms class="absolute sm:w-[500px] bg-white shadow-2xl shadow-primary/30 p-4 rounded-3xl top-full inset-x-0">
-									<div class="space-y-4">
-									<a href="#" class="flex gap-2 hover:bg-gray-100 p-4 rounded-xl transition-all duration-300 relative group">
-										<div class="rounded-2xl min-h-[3rem] max-h-[3rem] min-w-[3rem] max-w-[3rem] bg-gradient-to-br from-indigo-600 to-blue-500 shadow-xl shadow-indigo-600/30 flex justify-center items-center">
-											<i class='bx bx-happy-heart-eyes text-white text-xl'></i>
+	<body>
+		<div class="w-full min-h-screen overflow-x-hidden relative dark:bg-gray-800">
+			<nav
+				class="py-4 bg-white dark:bg-gray-800 fixed inset-x-0 top-0 border-b border-gray-100 dark:border-gray-900 z-50"
+			>
+				<div class="container px-8 mx-auto flex items-center relative">
+					<a
+						class="text-xl text-gray-800 dark:text-gray-100 font-black tracking-widest"
+						href="#"
+						>ITP<span class="text-primary">.</span></a
+					>
+					<div class="flex justify-between items-center w-full">
+						<div class="flex justify-between items-center w-full ml-6">
+							<div class="sm:relative flex flex-col" x-data="{ open: false }">
+								<button
+									x-on:click="open = ! open"
+									x-on:keydown.escape="open = false"
+									class="text-sm font-medium hover:text-gray-600 dark:hover:text-gray-100 flex items-center gap-1 transition-all duration-300"
+									x-bind:class="open ? 'text-gray-600 dark:text-gray-100' : 'text-gray-400 dark:text-gray-300'"
+									href="#"
+								>
+									More From Me
+									<i
+										class="bx bx-chevron-up text-xl transition-all duration-300"
+										x-bind:class="open ? 'rotate-120' : 'rotate-180'"
+									></i>
+								</button>
+								<template x-if="true">
+									<div
+										x-show="open"
+										x-on:click.away="open = false"
+										x-transition.duration.300ms
+										class="absolute sm:w-[500px] bg-white dark:bg-gray-900 shadow-2xl shadow-primary/30 p-4 rounded-3xl top-full inset-x-0"
+									>
+										<div class="space-y-4">
+											<a
+												href="#"
+												class="flex gap-2 hover:bg-gray-100 dark:hover:bg-gray-800 p-4 rounded-xl transition-all duration-300 relative group"
+											>
+												<div
+													class="rounded-2xl min-h-[3rem] max-h-[3rem] min-w-[3rem] max-w-[3rem] bg-gradient-to-br from-indigo-600 to-blue-500 shadow-xl shadow-indigo-600/30 dark:shadow-indigo-600/20 flex justify-center items-center"
+												>
+													<i
+														class="bx bx-happy-heart-eyes text-white text-xl"
+													></i>
+												</div>
+												<div>
+													<h2
+														class="text-lg font-bold text-gray-800 dark:text-gray-100"
+													>
+														Name Generator
+													</h2>
+													<p class="text-sm text-gray-400 tracking-wide">
+														Get a cool name here!
+													</p>
+												</div>
+												<i
+													class="bx bx-right-arrow-alt text-gray-800 dark:text-gray-100 absolute top-1/2 right-6 -translate-y-1/2 translate-x-6 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300"
+												></i>
+											</a>
+											<a
+												href="#"
+												class="flex gap-2 hover:bg-gray-100 dark:hover:bg-gray-800 p-4 rounded-xl transition-all duration-300 relative group"
+											>
+												<div
+													class="rounded-2xl min-h-[3rem] max-h-[3rem] min-w-[3rem] max-w-[3rem] bg-gradient-to-br from-pink-500 to-fuchsia-500 shadow-xl dark:shadow-pink-500230 flex justify-center items-center"
+												>
+													<i
+														class="bx bx-code-alt text-white text-xl"
+													></i>
+												</div>
+												<div>
+													<h2
+														class="text-lg font-bold text-gray-800 dark:text-gray-100"
+													>
+														My Code
+													</h2>
+													<p class="text-sm text-gray-400 tracking-wide">
+														Code snippet to share your code!
+													</p>
+												</div>
+												<i
+													class="bx bx-right-arrow-alt text-gray-800 dark:text-gray-100 absolute top-1/2 right-6 -translate-y-1/2 translate-x-6 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300"
+												></i>
+											</a>
+											<a
+												href="#"
+												class="flex gap-2 hover:bg-gray-100 dark:hover:bg-gray-800 p-4 rounded-xl transition-all duration-300 relative group"
+											>
+												<div
+													class="rounded-2xl min-h-[3rem] max-h-[3rem] min-w-[3rem] max-w-[3rem] bg-gradient-to-br from-green-500 to-emerald-400 shadow-xl shadow-green-500/30 dark:shadow-green-500/20 flex justify-center items-center"
+												>
+													<i
+														class="bx bx-book-bookmark text-white text-xl"
+													></i>
+												</div>
+												<div>
+													<h2
+														class="text-lg font-bold text-gray-800 dark:text-gray-100"
+													>
+														PowQuran
+													</h2>
+													<p class="text-sm text-gray-400 tracking-wide">
+														Read the Quran online anywhere!
+													</p>
+												</div>
+												<i
+													class="bx bx-right-arrow-alt text-gray-800 dark:text-gray-100 absolute top-1/2 right-6 -translate-y-1/2 translate-x-6 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300"
+												></i>
+											</a>
 										</div>
-										<div>
-											<h2 class="text-lg font-bold text-gray-800">Name Generator</h2>
-											<p class="text-sm text-gray-400 tracking-wide">
-												Get a cool name here!
-											</p>
-										</div>
-										<i class='bx bx-right-arrow-alt text-gray-800 absolute top-1/2 right-6 -translate-y-1/2 translate-x-6 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300' ></i>
-									</a>
-									<a href="#" class="flex gap-2 hover:bg-gray-100 p-4 rounded-xl transition-all duration-300 relative group">
-										<div class="rounded-2xl min-h-[3rem] max-h-[3rem] min-w-[3rem] max-w-[3rem] bg-gradient-to-br from-pink-500 to-fuchsia-500 shadow-xl shadow-pink-500/30 flex justify-center items-center">
-											<i class='bx bx-code-alt text-white text-xl'></i>
-										</div>
-										<div>
-											<h2 class="text-lg font-bold text-gray-800">My Code</h2>
-											<p class="text-sm text-gray-400 tracking-wide">
-												Code snippet to share your code!
-											</p>
-										</div>
-										<i class='bx bx-right-arrow-alt text-gray-800 absolute top-1/2 right-6 -translate-y-1/2 translate-x-6 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300' ></i>
-									</a>
-									<a href="#" class="flex gap-2 hover:bg-gray-100 p-4 rounded-xl transition-all duration-300 relative group">
-										<div class="rounded-2xl min-h-[3rem] max-h-[3rem] min-w-[3rem] max-w-[3rem] bg-gradient-to-br from-green-500 to-emerald-400 shadow-xl shadow-green-500/30 flex justify-center items-center">
-											<i class='bx bx-book-bookmark text-white text-xl'></i>
-										</div>
-										<div>
-											<h2 class="text-lg font-bold text-gray-800">PowQuran</h2>
-											<p class="text-sm text-gray-400 tracking-wide">
-												Read the Quran online anywhere!
-											</p>
-										</div>
-										<i class='bx bx-right-arrow-alt text-gray-800 absolute top-1/2 right-6 -translate-y-1/2 translate-x-6 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300' ></i>
-									</a>
 									</div>
-								</div>
-							</template>
-						</div>
-						<div class="flex gap-1">
-							<button class="hover:bg-gray-100 text-gray-800 h-10 w-10 rounded-full grid place-items-center transition-all duration-300">
-								<i class='bx bx-moon text-xl'></i>
-							</button>
-							<button class="hover:bg-gray-100 text-gray-800 h-10 w-10 rounded-full grid place-items-center transition-all duration-300">
-								<i class='bx bxl-github text-xl'></i>
-							</button>
-						</div>
-					</div>
-				</div>
-			</div>
-		</nav>
-
-		<main class="lg:min-h-screen flex justify-center items-center lg:mt-0 mt-28 relative">
-			<div class="container px-8 grid lg:grid-cols-2 items-center gap-y-6 gap-x-10">
-				<div class="space-y-4 ld:order-1 order-2 text-center lg:text-left">
-					<h1 class="md:text-6xl sm:text-5xl text-4xl font-black text-gray-800">Get <span class="text-primary underline">Palettes</span> from Your <span class="text-primary underline">Photos</span>!</h1>
-					<p class="text-gray-600 tracking-wide ">
-						Get any color of any image you want for free!
-					</p>
-					<a class="btn btn-primary gap-1 lg:inline-flex hidden" href="#try">Try Now!</a>
-				</div>
-				<img class="rounded-xl lg:order-2 order-1 mx-auto" src="./assets/img/lidya-nada-tXz6g8JYYoI-unsplash.jpg" alt="">
-			</div>
-		</main>
-
-		<section id="try" class="my-20 scroll-mt-20">
-			<div class="container px-8 mx-auto">
-				<label class="btn btn-primary" for="image-upload">Change Image</label>
-				<input type="file" id="image-upload" class="absolute opacity-0 pointer-events-none">
-
-				<div class="grid md:grid-cols-2 gap-10 mt-10">
-					<img class="rounded-xl" id="image-preview" alt="Image Upload">
-					<div class="space-y-4">
-						<h2 class="uppercase font-bold tracking-widest text-gray-400">Dominant Color</h2>
-						<div class="flex gap-1 items-center" id="dominant-color">
-							Wait...
-						</div>
-						<h2 class="uppercase font-bold tracking-widest text-gray-400">Pallete</h2>
-						<div class="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-3 grid-cols-2 gap-4" id="palette">
-							Wait...
+								</template>
+							</div>
+							<div class="flex gap-1">
+								<button
+									class="hover:bg-gray-100 text-gray-800 dark:hover:bg-gray-900 dark:text-white h-10 w-10 rounded-full grid place-items-center transition-all duration-300"
+									id="darkMode"
+								>
+									<i class="bx bx-moon text-xl"></i>
+								</button>
+								<button
+									class="hover:bg-gray-100 text-gray-800 dark:hover:bg-gray-900 dark:text-white h-10 w-10 rounded-full grid place-items-center transition-all duration-300"
+									id="lightMode"
+								>
+									<i class="bx bx-sun text-xl"></i>
+								</button>
+								<button
+									class="hover:bg-gray-100 text-gray-800 dark:hover:bg-gray-900 dark:text-white h-10 w-10 rounded-full grid place-items-center transition-all duration-300"
+								>
+									<i class="bx bxl-github text-xl"></i>
+								</button>
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-		</section>
-   </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.0/color-thief.umd.js"></script>
-	<script src="./dist/js/script.js"></script>
-</body>
+			</nav>
 
+			<main class="lg:min-h-screen flex justify-center items-center lg:mt-0 mt-28 relative">
+				<div class="container px-8 grid lg:grid-cols-2 items-center gap-y-6 gap-x-10">
+					<div class="space-y-4 ld:order-1 order-2 text-center lg:text-left">
+						<h1
+							class="md:text-6xl sm:text-5xl text-4xl font-black text-gray-800 dark:text-gray-100"
+						>
+							Get <span class="text-primary underline">Palettes</span> from Your
+							<span class="text-primary underline">Photos</span>!
+						</h1>
+						<p class="text-gray-600 dark:text-gray-400 tracking-wide">
+							Get any color of any image you want for free!
+						</p>
+						<a class="btn btn-primary gap-1 lg:inline-flex hidden" href="#try"
+							>Try Now!</a
+						>
+					</div>
+					<img
+						class="rounded-xl lg:order-2 order-1 mx-auto"
+						src="./assets/img/lidya-nada-tXz6g8JYYoI-unsplash.jpg"
+						alt=""
+					/>
+				</div>
+			</main>
+
+			<section id="try" class="my-20 scroll-mt-20">
+				<div class="container px-8 mx-auto">
+					<label class="btn btn-primary" for="image-upload">Change Image</label>
+					<input
+						type="file"
+						id="image-upload"
+						class="absolute opacity-0 pointer-events-none"
+					/>
+
+					<div class="grid md:grid-cols-2 gap-10 mt-10">
+						<img class="rounded-xl" id="image-preview" alt="Image Upload" />
+						<div class="space-y-4">
+							<h2 class="uppercase font-bold tracking-widest text-gray-400">
+								Dominant Color
+							</h2>
+							<div class="flex gap-1 items-center" id="dominant-color">Wait...</div>
+							<h2 class="uppercase font-bold tracking-widest text-gray-400">
+								Pallete
+							</h2>
+							<div
+								class="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-3 grid-cols-2 gap-4"
+								id="palette"
+							>
+								Wait...
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.0/color-thief.umd.js"></script>
+		<script src="./dist/js/script.js"></script>
+	</body>
 </html>
