@@ -37,7 +37,7 @@ const Navbar = () => {
                 <Logo theme={currentTheme} className="h-8" />
                 <div className="flex gap-1">
                     <a
-                        href="https://github.com/abnvlf/image-to-palette"
+                        href="https://github.com/abnvlf/palettepix"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="grid size-12 place-items-center rounded-lg bg-zinc-500/20 transition-all duration-200 hover:bg-zinc-800 hover:text-white dark:text-white dark:hover:bg-white dark:hover:text-zinc-800"
